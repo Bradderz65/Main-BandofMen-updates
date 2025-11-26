@@ -1,0 +1,26 @@
+/* ============================================
+   BAND OF MEN - CSS Variables
+   ============================================
+   Central location for all design tokens
+   ============================================ */
+
+:root {
+    /* Color Palette: Deep Forest & Burnished Copper */
+    --bg-deep: #080f0d;       /* Almost black green */
+    --bg-panel: #0f1f1c;      /* Deep Sherwood Green */
+    --accent-gold: #c5a059;   /* Burnished Copper/Gold */
+    --accent-light: #e6d5b8;  /* Pale Champagne */
+    --text-main: #e0e6e4;     /* Off-white with cool tint */
+    --text-muted: #8ca39d;    /* Muted slate green */
+    
+    /* Typography */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Manrope', sans-serif;
+    
+    /* Animation */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    
+    /* Spacing */
+    --spacing-section: 100px;
+    --header-height: 70px;
+}

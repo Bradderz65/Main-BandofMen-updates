@@ -1,0 +1,14 @@
+{
+  "name": "band-of-men",
+  "version": "1.0.0",
+  "description": "Band of Men Barber Salon Website",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "postgres": "^3.4.7",
+    "resend": "^2.0.0"
+  }
+}

@@ -1,0 +1,259 @@
+/* ============================================
+   BAND OF MEN - Components
+   ============================================
+   Buttons, cards, and reusable UI elements
+   ============================================ */
+
+/* --- Buttons --- */
+.btn-primary {
+    display: inline-block;
+    position: relative;
+    padding: 16px 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--bg-deep);
+    background: var(--accent-gold);
+    border: none;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease-out);
+    white-space: nowrap;
+}
+
+.btn-primary:hover { 
+    transform: translateY(-3px); 
+    background: #d4b065; 
+}
+
+.btn-ghost {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover { 
+    background: rgba(197, 160, 89, 0.1); 
+    color: var(--accent-light); 
+}
+
+#gallery-btn {
+    background: #1a2e2a;
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    transition: all 0.3s ease;
+}
+
+#gallery-btn:hover {
+    background: var(--accent-gold);
+    color: var(--bg-deep);
+}
+
+/* --- Service Cards --- */
+.service-card {
+    grid-column: span 4;
+    background: var(--bg-panel);
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.service-card:hover { 
+    transform: translateY(-5px); 
+    background: #132622; 
+    border-color: var(--accent-gold); 
+}
+
+.service-card.featured { 
+    grid-column: span 4; 
+    background: linear-gradient(45deg, #152b26, #0f1f1c); 
+    border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* --- Gallery Items --- */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: all 0.4s ease;
+    background: var(--bg-panel);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item:nth-child(n+5) {
+    display: none;
+}
+
+.gallery-grid.expanded .gallery-item:nth-child(n+5) {
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item img.loaded,
+.gallery-item img[loading="lazy"] {
+    opacity: 1;
+}
+
+/* --- Review Box --- */
+.review-box {
+    min-width: 300px; 
+    max-width: 350px;
+    background: var(--bg-panel);
+    padding: 30px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- Preloader --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-deep);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.loader-logo span {
+    color: var(--accent-gold);
+}
+
+.loader-bar-container {
+    width: 300px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.loader-text {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+/* --- Amenities Section --- */
+.amenities-section {
+    background: linear-gradient(180deg, var(--bg-deep) 0%, #0b1412 100%);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.amenity-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+.amenity-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    background: #132622;
+}
+
+.amenity-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 50%;
+    color: var(--accent-gold);
+    transition: all 0.3s ease;
+}
+
+.amenity-item:hover .amenity-icon {
+    background: rgba(197, 160, 89, 0.2);
+    transform: scale(1.1);
+}
+
+.amenity-item h4 {
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+.amenity-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}

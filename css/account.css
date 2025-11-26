@@ -1,0 +1,513 @@
+/* ============================================
+   BAND OF MEN - Account Page Styles
+   ============================================ */
+
+/* --- Account Page Layout --- */
+.account-page {
+    min-height: 100vh;
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 80px;
+    background: var(--bg-deep);
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.account-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-top: 10px;
+}
+
+/* --- Account Grid --- */
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Account Cards --- */
+.account-card {
+    background: var(--bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0;
+    transition: border-color 0.3s ease;
+}
+
+.account-card:hover {
+    border-color: rgba(197, 160, 89, 0.2);
+}
+
+.account-card-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.account-card-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+.account-card-body {
+    padding: 25px;
+}
+
+/* --- Profile Card --- */
+.profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-gold), #d4b065);
+    color: var(--bg-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.profile-email {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.profile-member-since {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-member-since span {
+    color: var(--accent-gold);
+}
+
+/* --- Form Styles --- */
+.account-form-group {
+    margin-bottom: 20px;
+}
+
+.account-form-group label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.account-form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.account-form-group input:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.account-form-group input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* --- Error & Success Messages --- */
+.password-error,
+.password-success {
+    display: none;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.password-error {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #ff6b6b;
+}
+
+.password-success {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    color: #51cf66;
+}
+
+.password-error.show,
+.password-success.show {
+    display: block;
+}
+
+/* --- Submit Button --- */
+.account-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent-gold);
+    border: none;
+    color: var(--bg-deep);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.account-submit:hover:not(:disabled) {
+    background: #d4b065;
+    transform: translateY(-2px);
+}
+
+.account-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- Two-Factor Authentication --- */
+.twofa-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.twofa-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.twofa-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+}
+
+.twofa-icon.enabled {
+    background: rgba(40, 167, 69, 0.1);
+    color: #51cf66;
+}
+
+.twofa-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.twofa-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Toggle Switch */
+.twofa-toggle {
+    position: relative;
+    width: 56px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.twofa-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.twofa-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.twofa-slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.twofa-toggle input:checked + .twofa-slider {
+    background: rgba(197, 160, 89, 0.2);
+    border-color: var(--accent-gold);
+}
+
+.twofa-toggle input:checked + .twofa-slider::before {
+    transform: translateX(26px);
+    background: var(--accent-gold);
+}
+
+/* 2FA Verification Section */
+.twofa-verify {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.twofa-verify .account-form-group input {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+}
+
+.twofa-verify-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.twofa-error,
+.twofa-success {
+    display: none;
+    padding: 12px 16px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.twofa-error {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #ff6b6b;
+}
+
+.twofa-success {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    color: #51cf66;
+}
+
+.twofa-error.show,
+.twofa-success.show {
+    display: block;
+}
+
+/* --- Account Actions Card --- */
+.account-card-actions {
+    grid-column: 1 / -1;
+}
+
+.account-card-actions .account-card-body {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.account-action-btn {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.account-action-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.account-action-btn svg {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.account-action-btn:hover svg {
+    opacity: 1;
+}
+
+.account-action-logout {
+    border-color: rgba(220, 53, 69, 0.3);
+    color: #ff6b6b;
+}
+
+.account-action-logout:hover {
+    border-color: #ff6b6b;
+    background: rgba(220, 53, 69, 0.1);
+    color: #ff6b6b;
+}
+
+/* --- Loading State --- */
+.account-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 20px;
+}
+
+.account-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(197, 160, 89, 0.2);
+    border-top-color: var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 900px) {
+    .account-page {
+        padding-top: calc(var(--header-height) + 40px);
+        padding-bottom: 60px;
+    }
+    
+    .account-header h1 {
+        font-size: 2rem;
+    }
+    
+    .account-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .account-card-actions .account-card-body {
+        flex-direction: column;
+    }
+    
+    .account-action-btn {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-page {
+        padding-top: calc(var(--header-height) + 30px);
+        padding-bottom: 40px;
+    }
+    
+    .account-header {
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    
+    .account-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .account-grid {
+        padding: 0 15px;
+        gap: 15px;
+    }
+    
+    .account-card-header {
+        padding: 15px 20px;
+    }
+    
+    .account-card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .account-card-body {
+        padding: 20px;
+    }
+    
+    .profile-avatar-large {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+    
+    .profile-name {
+        font-size: 1.2rem;
+    }
+    
+    .account-form-group input {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+    
+    .account-submit {
+        padding: 14px;
+        font-size: 0.85rem;
+    }
+    
+    .account-action-btn {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .account-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .account-grid {
+        padding: 0 10px;
+    }
+    
+    .account-card-body {
+        padding: 15px;
+    }
+    
+    .profile-avatar-large {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}

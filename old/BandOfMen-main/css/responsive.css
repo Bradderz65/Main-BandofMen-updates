@@ -1,0 +1,211 @@
+/* ============================================
+   BAND OF MEN - Responsive Styles
+   ============================================
+   Mobile and tablet breakpoints
+   ============================================ */
+
+@media (max-width: 900px) {
+    /* Hide Desktop Nav */
+    .nav-links, 
+    .desktop-btn { 
+        display: none; 
+    }
+    
+    /* Show Hamburger */
+    .hamburger-btn { 
+        display: flex; 
+        position: fixed; 
+        right: 20px;
+        top: 25px;
+        z-index: 3002;
+    }
+    
+    /* Keep Logo Fixed */
+    .logo {
+        position: fixed; 
+        left: 20px;
+        top: 10px;
+        margin-top: 0;
+    }
+
+    /* Grids */
+    .intro-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .intro-img { 
+        height: 300px; 
+    }
+    
+    .service-grid-custom { 
+        display: block; 
+    }
+    
+    .service-card, 
+    .service-card.featured { 
+        margin-bottom: 20px; 
+        width: 100%; 
+    }
+    
+    /* Contact */
+    .contact-split { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .info-side { 
+        order: 1; 
+        padding: 50px 20px; 
+    }
+    
+    .map-side { 
+        order: 2; 
+        height: 450px; 
+    }
+    
+    /* Typography */
+    h1 { 
+        font-size: 3rem; 
+    }
+    
+    /* Hero */
+    .hero-btns { 
+        flex-direction: column; 
+        width: 100%; 
+    }
+    
+    .btn-primary, 
+    .btn-ghost { 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    /* Menu */
+    .menu-selector { 
+        padding: 10px; 
+        gap: 10px; 
+    }
+    
+    .selector-btn { 
+        padding: 12px 15px; 
+        font-size: 0.8rem; 
+        min-width: 120px; 
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+    
+    /* Amenities */
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .amenity-item {
+        padding: 25px 15px;
+    }
+    
+    .amenity-item:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+    
+    .amenity-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .amenity-item h4 {
+        font-size: 0.9rem;
+    }
+    
+    .amenity-item p {
+        font-size: 0.8rem;
+    }
+    
+    /* Mobile Logo */
+    .logo img {
+        display: none;
+    }
+    
+    .logo-subheader {
+        font-size: 0.45rem;
+        margin-top: -6px;
+        letter-spacing: 0.15em;
+        padding-left: 50px;
+        padding-right: 50px;
+        display: block;
+    }
+    
+    .logo-subheader::before {
+        left: 5px;
+        width: 38px;
+    }
+    
+    .logo-subheader::after {
+        right: 5px;
+        width: 38px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item img {
+        height: 280px;
+    }
+    
+    .menu-selector {
+        flex-direction: column;
+    }
+    
+    .selector-btn {
+        min-width: 100%;
+    }
+    
+    .pricing-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .p-price {
+        margin-left: 0;
+    }
+    
+    /* Amenities - Single Column */
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .amenity-item:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+    
+    .amenity-item {
+        padding: 25px 20px;
+    }
+    
+    .amenity-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .amenity-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+}
