@@ -1,5 +1,6 @@
 import sql from './db.js';
 import bcrypt from 'bcryptjs';
+import { randomUUID } from 'node:crypto';
 
 export default async (req, context) => {
     // Only allow POST requests
@@ -148,7 +149,7 @@ export default async (req, context) => {
         }
 
         // Generate session token
-        const sessionToken = crypto.randomUUID();
+        const sessionToken = randomUUID();
         const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
         // Delete any existing sessions for this user (optional: single session)
@@ -176,7 +177,16 @@ export default async (req, context) => {
 
     } catch (error) {
         console.error('Login error:', error);
-        return new Response(JSON.stringify({ error: 'An error occurred during login' }), {
+        const msg = String(error?.message || '');
+
+        let safeError = 'An error occurred during login';
+        if ((msg.includes('DATABASE_URL') || msg.includes('NETLIFY_DATABASE_URL')) && msg.includes('missing')) {
+            safeError = 'Server is not configured: missing database URL env var (DATABASE_URL or NETLIFY_DATABASE_URL).';
+        } else if (msg.toLowerCase().includes('relation') && msg.toLowerCase().includes('does not exist')) {
+            safeError = "Database tables are missing. Run the init function '/.netlify/functions/init-db' once.";
+        }
+
+        return new Response(JSON.stringify({ error: safeError }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });

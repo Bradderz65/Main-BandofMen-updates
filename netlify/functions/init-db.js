@@ -3,8 +3,10 @@ import sql from './db.js';
 export default async (req, context) => {
     try {
         // Check if the database connection is properly configured
-        if (!process.env.DATABASE_URL) {
-            throw new Error('DATABASE_URL environment variable is missing. Please add it in Netlify Site Settings.');
+        if (!process.env.DATABASE_URL && !process.env.NETLIFY_DATABASE_URL && !process.env.NETLIFY_DATABASE_URL_UNPOOLED) {
+            throw new Error(
+                'No database URL found. Set DATABASE_URL or use Netlify DB (NETLIFY_DATABASE_URL/NETLIFY_DATABASE_URL_UNPOOLED).'
+            );
         }
 
         console.log('Attempting to connect to database...');

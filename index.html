@@ -668,7 +668,8 @@
     </div>
 
     <!-- JavaScript Files -->
-    <script src="js/auth.js"></script>
+    <!-- Cache-bust auth script so error messages and flows update reliably after deploys -->
+    <script src="js/auth.js?v=20260206"></script>
     <script src="js/preloader.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/gallery.js"></script>

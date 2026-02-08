@@ -15,6 +15,15 @@ export default async (req, context) => {
     }
 
     try {
+        if (!process.env.RESEND_API_KEY) {
+            return new Response(JSON.stringify({
+                error: 'Email provider is not configured: RESEND_API_KEY is missing.'
+            }), {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
         const { email, type } = await req.json();
 
         if (!email || !type) {
@@ -68,8 +77,12 @@ export default async (req, context) => {
             'disable_2fa': 'Confirm disabling two-factor authentication'
         };
 
+        const from =
+            (process.env.RESEND_FROM && process.env.RESEND_FROM.trim()) ||
+            'Band of Men <send@bandofmen.uk>';
+
         const { data, error } = await resend.emails.send({
-            from: 'Band of Men <send@bandofmen.uk>',
+            from,
             to: [email],
             subject: subjectMap[type],
             html: `
@@ -133,7 +146,20 @@ export default async (req, context) => {
 
         if (error) {
             console.error('Email send error:', error);
-            return new Response(JSON.stringify({ error: 'Failed to send verification email' }), {
+            const details =
+                error?.message ||
+                error?.name ||
+                (typeof error === 'string' ? error : null) ||
+                (() => {
+                    try { return JSON.stringify(error); } catch { return null; }
+                })() ||
+                'Unknown email provider error';
+            return new Response(JSON.stringify({
+                error: 'Failed to send verification email',
+                // Safe to expose: helps diagnose domain verification / auth issues.
+                details: String(details).slice(0, 500),
+                from
+            }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
             });
