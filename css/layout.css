@@ -401,6 +401,13 @@ header {
     display: block;
 }
 
+.p-duration {
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
 .p-price { 
     font-family: var(--font-body); 
     font-weight: 700; 
