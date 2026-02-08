@@ -15,17 +15,17 @@
     /* Show Hamburger */
     .hamburger-btn { 
         display: flex; 
-        position: fixed; 
-        right: 20px;
-        top: 25px;
+        position: relative;
+        right: auto;
+        top: auto;
         z-index: 3002;
     }
     
-    /* Keep Logo Fixed */
+    /* Let header/nav flex centering position the logo */
     .logo {
-        position: fixed; 
-        left: 20px;
-        top: 10px;
+        position: relative;
+        left: auto;
+        top: auto;
         margin-top: 0;
     }
 
@@ -133,8 +133,12 @@
     }
     
     /* Mobile Logo */
-    .logo img {
+    .logo-img {
         display: none;
+    }
+
+    .logo-main-text {
+        font-size: 1.35rem;
     }
     
     .logo-subheader {
