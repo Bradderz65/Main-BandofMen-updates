@@ -443,6 +443,21 @@ header {
     white-space: nowrap;
 }
 
+/* Two-column service menu on larger screens */
+@media (min-width: 901px) {
+    .menu-content.active {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 60px;
+    }
+
+    .menu-content.active .cat-header {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+}
+
 /* --- Contact Section --- */
 .contact-split { 
     display: grid; 
