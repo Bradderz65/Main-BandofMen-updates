@@ -333,6 +333,16 @@ header {
     margin-top: 60px;
 }
 
+.gallery-footer {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.gallery-grid.expanded + .gallery-footer {
+    display: block;
+}
+
 .scrolling-wrapper {
     display: flex; 
     gap: 20px; 

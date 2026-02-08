@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Band of Men | Legendary Grooming">
     <meta property="og:description" content="Band of Men Barber Salon. Legendary grooming in Robin Hood, Wakefield. Precision skin fades, hot towel shaves, and waxing. Rated 5.0 stars.">
-    <meta property="og:image" content="https://bandofmen.co.uk/Photos/Branding/logo.png">
+    <meta property="og:image" content="https://bandofmen.uk/roundlogo.png">
     <meta property="og:url" content="https://bandofmen.co.uk">
     <meta property="og:site_name" content="Band of Men Barber Salon">
     
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Band of Men | Legendary Grooming">
     <meta name="twitter:description" content="Band of Men Barber Salon. Legendary grooming in Robin Hood, Wakefield. Precision skin fades, hot towel shaves, and waxing.">
-    <meta name="twitter:image" content="https://bandofmen.co.uk/Photos/Branding/logo.png">
+    <meta name="twitter:image" content="https://bandofmen.uk/roundlogo.png">
 
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Preload Critical Images -->
-    <link rel="preload" href="Photos/Branding/logo.png" as="image">
+    <link rel="preload" href="roundlogo.png" as="image">
     <link rel="preload" href="Photos/Branding/inside photo.jpeg" as="image">
     <link rel="preload" href="Photos/Branding/exterior.jpeg" as="image">
 
@@ -61,7 +61,7 @@
         <div class="container nav-wrap">
             <a href="#" class="logo">
                 <div class="logo-main">
-                    <img class="logo-img" src="Photos/Branding/logo.png" alt="Band of Men Logo" loading="eager">
+                    <img class="logo-img" src="roundlogo.png" alt="Band of Men Logo" loading="eager">
                     <div class="logo-text">
                         <div class="logo-main-text">BAND OF <span>MEN</span></div>
                         <!-- <div class="logo-subheader">Professional Barbers</div> -->
@@ -259,10 +259,10 @@
     <!-- GALLERY SECTION -->
     <section id="gallery" class="section-padding">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 50px;">
-                <div class="subtitle">OUR WORK</div>
-                <h2>Haircut Gallery</h2>
-                <button onclick="toggleGallery()" class="btn-ghost" id="gallery-btn" style="margin-top: 20px;">Show More</button>
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <div class="subtitle">OUR WORK</div>
+                    <h2>Haircut Gallery</h2>
+                <button onclick="toggleGallery()" class="btn-ghost" id="gallery-btn" style="margin-top: 20px;" aria-controls="gallery-grid">Show More</button>
             </div>
 
             <div class="gallery-grid" id="gallery-grid">
@@ -392,6 +392,10 @@
                 <div class="gallery-item">
                     <img src="Photos/Haircuts/haircut-42.jpeg" alt="Haircut 42" loading="lazy">
                 </div>
+            </div>
+
+            <div class="gallery-footer">
+                <button onclick="toggleGallery()" class="btn-ghost gallery-toggle-btn" id="gallery-btn-bottom" aria-controls="gallery-grid">Show Less</button>
             </div>
         </div>
     </section>
