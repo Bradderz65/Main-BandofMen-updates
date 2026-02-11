@@ -270,7 +270,7 @@ header.scrolled {
     border: 1px solid rgba(197, 160, 89, 0.18);
     border-top: none;
     border-radius: 0 0 16px 16px;
-    background: radial-gradient(circle at 52% 48%, rgba(28, 72, 52, 0.62), rgba(8, 34, 24, 0.95) 50%, rgba(5, 20, 14, 0.98) 100%);
+    background: linear-gradient(180deg, #0f231b 0%, #0a1712 100%);
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
     overflow-y: auto;
     overscroll-behavior: contain;
