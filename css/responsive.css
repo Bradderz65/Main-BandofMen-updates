@@ -36,7 +36,8 @@
     }
     
     .intro-img { 
-        height: 300px; 
+        height: auto;
+        max-width: 100%;
     }
     
     .service-grid-custom { 
