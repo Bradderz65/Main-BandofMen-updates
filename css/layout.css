@@ -483,7 +483,8 @@ header {
     transition: filter 0.3s ease;
 }
 
-.map-side:hover iframe {
+.map-side:hover iframe,
+.map-side.in-view iframe {
     filter: grayscale(0.5) invert(0.92) hue-rotate(180deg) contrast(1.1) brightness(1);
 }
 

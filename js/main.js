@@ -58,6 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Mobile map effect: apply "hover" style when map scrolls into view on touch devices
+    const mapSide = document.querySelector('.map-side');
+    const isTouchLike = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+    if (mapSide && isTouchLike && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    mapSide.classList.add('in-view');
+                } else {
+                    mapSide.classList.remove('in-view');
+                }
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        observer.observe(mapSide);
+    }
+
     // Console branding
     console.log('%c BAND OF MEN ', 'background: #c5a059; color: #080f0d; font-size: 20px; font-weight: bold; padding: 10px;');
     console.log('%c Legendary Grooming ', 'color: #8ca39d; font-size: 12px;');
