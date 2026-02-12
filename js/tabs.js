@@ -151,6 +151,9 @@ const Tabs = {
     },
 
     openTab(evt, tabName) {
+        if (evt && typeof evt.preventDefault === 'function') evt.preventDefault();
+        const scrollY = window.scrollY;
+
         // Hide all tab contents
         const contents = document.getElementsByClassName('menu-content');
         for (let i = 0; i < contents.length; i++) {
@@ -187,6 +190,12 @@ const Tabs = {
         }
 
         this.applyStableHeight();
+
+        // Prevent mobile focus/layout adjustments from kicking user down the page
+        if (evt && evt.currentTarget && typeof evt.currentTarget.blur === 'function') {
+            evt.currentTarget.blur();
+        }
+        requestAnimationFrame(() => window.scrollTo(0, scrollY));
     }
 };
 
