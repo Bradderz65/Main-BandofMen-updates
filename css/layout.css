@@ -516,6 +516,13 @@ header.scrolled {
     animation: menuFadeIn 0.5s; 
 }
 
+/* Set by JS on desktop so pricing section height stays stable across tabs */
+@media (min-width: 901px) {
+    .menu-content {
+        min-height: var(--menu-content-max-height, auto);
+    }
+}
+
 .menu-content.active { 
     display: block; 
 }
