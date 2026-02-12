@@ -5,6 +5,16 @@
    ============================================ */
 
 @media (max-width: 900px) {
+    /* Use taller forest image for pricing/menu section on mobile */
+    .section-pricing-tone::before {
+        background-image: image-set(
+            url('../Photos/Branding/hero-forest-mobile.webp') type('image/webp'),
+            url('../Photos/Branding/hero-forest-mobile.jpg') type('image/jpeg')
+        );
+        background-size: cover;
+        background-position: center;
+    }
+
     /* Hide Desktop Nav & Actions */
     .nav-links, 
     .desktop-btn,
