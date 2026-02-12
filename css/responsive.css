@@ -13,6 +13,12 @@
         );
         background-size: cover;
         background-position: center;
+        height: 320px;
+        opacity: 0.13;
+    }
+
+    .section-pricing-tone::after {
+        height: 380px;
     }
 
     /* Hide Desktop Nav & Actions */

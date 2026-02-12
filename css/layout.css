@@ -391,29 +391,45 @@ header.scrolled {
     position: relative;
     background: #101915;
     overflow: hidden;
+    padding-top: 0;
 }
 
+/* Pro layout: visual background layer is independent from menu content height */
 .section-pricing-tone::before {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: clamp(260px, 34vw, 420px);
     background-image: url('../Photos/Branding/hero-forest.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.05;
-    filter: grayscale(30%) contrast(1) saturate(55%);
+    opacity: 0.10;
+    filter: grayscale(25%) contrast(1.02) saturate(60%);
     pointer-events: none;
 }
 
 .section-pricing-tone::after {
-    content: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: clamp(300px, 40vw, 500px);
+    background: linear-gradient(180deg, rgba(16, 25, 21, 0.15) 0%, rgba(16, 25, 21, 0.85) 55%, #101915 100%);
+    pointer-events: none;
 }
 
 .section-gallery-tone > .container,
 .section-pricing-tone > .container {
     position: relative;
     z-index: 1;
+}
+
+.section-pricing-tone > .container {
+    padding-top: clamp(38px, 5vw, 64px);
 }
 
 /* --- Section Grids --- */
